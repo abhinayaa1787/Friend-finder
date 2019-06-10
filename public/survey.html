@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Friend Finder </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="color:rgb(17, 14, 14);padding-top:20px;font-weight:bold;">Survey Questions</h2>
+        <hr>
+        <h3 style="font-weight:bold;">About you</h3>
+        <h5>Name(Required):</h5>
+        <input type="text" class="form-control">
+        <h5>Link to image(Reuired):</h5>
+        <input type="text" class="form-control">
+        <h3 style="font-weight:bold;">Question 1</h3>
+        <h5>Your mind is always buzzing with unexplored ideas and plans. </h5>
+        <select class="custom-select" id="inputQ1">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 2</h3>
+        <h5>Generally speaking, you rely more on your experience than your imagination.  </h5>
+        <select class="custom-select" id="inputQ2">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 3</h3>
+        <h5>You find it easy to stay relaxed and focused even when there is some pressure.
+            </h5>
+        <select class="custom-select" id="inputQ3">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 4</h3>
+        <h5>You rarely do something just out of sheer curiosity.
+            </h5>
+        <select class="custom-select" id="inputQ4">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 5</h3>
+        <h5>People can rarely upset you.
+            </h5>
+        <select class="custom-select" id="inputQ5">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 6</h3>
+        <h5>It is often difficult for you to relate to other people’s feelings.
+            </h5>
+        <select class="custom-select" id="inputQ6">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 7</h3>
+        <h5>In a discussion, truth should be more important than people’s sensitivities.            </h5>
+        <select class="custom-select" id="inputQ7">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 8</h3>
+        <h5>You rarely get carried away by fantasies and ideas.
+            </h5>
+        <select class="custom-select" id="inputQ8">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 9</h3> 
+        <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
+            </h5>
+        <select class="custom-select" id="inputQ9">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+        <h3 style="font-weight:bold;">Question 10</h3> 
+        <h5>You feel more energetic after spending time with a group of people.
+            </h5>
+        <select class="custom-select" id="inputQ10">
+            <option selected>Select an option</option>
+            <option value="1">1(Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(Strongly Agree)</option>
+        </select>
+
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API friends</a> | <a
+                        href="https://github.com/abhinayaa1787/Friend-finder">GitHub Repo</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
