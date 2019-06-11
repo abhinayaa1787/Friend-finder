@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
     //   console.log(req)
       friends.push(req.body);
-      res.send('success')
+    //   res.send('success')
   });
 
   // ---------------------------------------------------------------------------
