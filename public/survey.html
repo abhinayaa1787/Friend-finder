@@ -7,6 +7,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -15,12 +20,12 @@
         <hr>
         <h3 style="font-weight:bold;">About you</h3>
         <h5>Name(Required):</h5>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="name"> 
         <h5>Link to image(Reuired):</h5>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="imgSrc">
         <h3 style="font-weight:bold;">Question 1</h3>
         <h5>Your mind is always buzzing with unexplored ideas and plans. </h5>
-        <select class="custom-select" id="inputQ1">
+        <select class="custom-select" id="inputQ1" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -31,7 +36,7 @@
 
         <h3 style="font-weight:bold;">Question 2</h3>
         <h5>Generally speaking, you rely more on your experience than your imagination.  </h5>
-        <select class="custom-select" id="inputQ2">
+        <select class="custom-select" id="inputQ2" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -43,7 +48,7 @@
         <h3 style="font-weight:bold;">Question 3</h3>
         <h5>You find it easy to stay relaxed and focused even when there is some pressure.
             </h5>
-        <select class="custom-select" id="inputQ3">
+        <select class="custom-select" id="inputQ3" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -55,7 +60,7 @@
         <h3 style="font-weight:bold;">Question 4</h3>
         <h5>You rarely do something just out of sheer curiosity.
             </h5>
-        <select class="custom-select" id="inputQ4">
+        <select class="custom-select" id="inputQ4" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -67,7 +72,7 @@
         <h3 style="font-weight:bold;">Question 5</h3>
         <h5>People can rarely upset you.
             </h5>
-        <select class="custom-select" id="inputQ5">
+        <select class="custom-select" id="inputQ5" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -79,7 +84,7 @@
         <h3 style="font-weight:bold;">Question 6</h3>
         <h5>It is often difficult for you to relate to other people’s feelings.
             </h5>
-        <select class="custom-select" id="inputQ6">
+        <select class="custom-select" id="inputQ6" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -90,7 +95,7 @@
 
         <h3 style="font-weight:bold;">Question 7</h3>
         <h5>In a discussion, truth should be more important than people’s sensitivities.            </h5>
-        <select class="custom-select" id="inputQ7">
+        <select class="custom-select" id="inputQ7" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -102,7 +107,7 @@
         <h3 style="font-weight:bold;">Question 8</h3>
         <h5>You rarely get carried away by fantasies and ideas.
             </h5>
-        <select class="custom-select" id="inputQ8">
+        <select class="custom-select" id="inputQ8" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -114,7 +119,7 @@
         <h3 style="font-weight:bold;">Question 9</h3> 
         <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
             </h5>
-        <select class="custom-select" id="inputQ9">
+        <select class="custom-select" id="inputQ9" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -126,7 +131,7 @@
         <h3 style="font-weight:bold;">Question 10</h3> 
         <h5>You feel more energetic after spending time with a group of people.
             </h5>
-        <select class="custom-select" id="inputQ10">
+        <select class="custom-select" id="inputQ10" style="width:20%;">
             <option selected>Select an option</option>
             <option value="1">1(Strongly Disagree)</option>
             <option value="2">2</option>
@@ -134,6 +139,8 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
+
+        <button type="submit" class="btn btn-primary submit" id="submitBtn" style="width:100%">Submit</button>
 
 
         <footer class="footer">
@@ -144,5 +151,56 @@
         </footer>
 
     </div>
+    </body>
+<script>
+    $("#submitBtn").on("click",function(event){
 
-</body>
+        event.preventDefault();
+
+    var name=$("#name").val().trim();
+    var photo=$("#imgSrc").val().trim();
+    var scoreArr=[];
+    for(i=1;i<=10;i++){
+    var q=$("#inputQ"+i).val().trim();
+scoreArr.push(q);
+    }
+    var person={
+        name:name,
+        photo:photo,
+        scores:scoreArr
+    }
+
+    
+
+    // $.post("/api/friends", person,
+    //   function(data) {
+    //     if (data) {
+    //         alert(data);
+    //     }
+    //     // If a table is available... tell user they are booked.
+
+    //     // Clear the form when submitting
+    //     // $("#reserve-name").val("");
+    //     // $("#reserve-phone").val("");
+    //     // $("#reserve-email").val("");
+    //     // $("#reserve-unique-id").val("");
+
+    //   });
+
+    $.ajax({
+        method: "POST",
+        url: "/api/friends",
+        data: person
+        })
+        .done(function( msg ) {
+            alert( "Data Saved: " + msg );
+    });
+
+  });
+
+</script>
+
+    console.log(person)
+    alert("person added");
+
+</html>
