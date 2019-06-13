@@ -33,7 +33,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 2</h3>
         <h5>Generally speaking, you rely more on your experience than your imagination.  </h5>
         <select class="custom-select" id="inputQ2" style="width:20%;">
@@ -44,7 +44,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 3</h3>
         <h5>You find it easy to stay relaxed and focused even when there is some pressure.
             </h5>
@@ -56,7 +56,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 4</h3>
         <h5>You rarely do something just out of sheer curiosity.
             </h5>
@@ -68,7 +68,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 5</h3>
         <h5>People can rarely upset you.
             </h5>
@@ -80,7 +80,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 6</h3>
         <h5>It is often difficult for you to relate to other people’s feelings.
             </h5>
@@ -92,7 +92,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 7</h3>
         <h5>In a discussion, truth should be more important than people’s sensitivities.            </h5>
         <select class="custom-select" id="inputQ7" style="width:20%;">
@@ -103,7 +103,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+<br>
         <h3 style="font-weight:bold;">Question 8</h3>
         <h5>You rarely get carried away by fantasies and ideas.
             </h5>
@@ -115,7 +115,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 9</h3> 
         <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.
             </h5>
@@ -127,7 +127,7 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
         <h3 style="font-weight:bold;">Question 10</h3> 
         <h5>You feel more energetic after spending time with a group of people.
             </h5>
@@ -139,7 +139,8 @@
             <option value="4">4</option>
             <option value="5">5(Strongly Agree)</option>
         </select>
-
+        <br>
+        <br>
         <button type="submit" class="btn btn-primary submit" id="submitBtn" style="width:100%">Submit</button>
 
 
@@ -152,6 +153,7 @@
 
     </div>
     </body>
+    </html>
 <script>
     $("#submitBtn").on("click",function(event){
 
@@ -169,60 +171,21 @@ scoreArr.push(q);
         photo:photo,
         scores:scoreArr
     }
-
-    
-
-    // $.post("/api/friends", person,
-    //   function(data) {
-    //     if (data) {
-    //         alert(data);
-    //     }
-    //     // If a table is available... tell user they are booked.
-
-    //     // Clear the form when submitting
-    //     // $("#reserve-name").val("");
-    //     // $("#reserve-phone").val("");
-    //     // $("#reserve-email").val("");
-    //     // $("#reserve-unique-id").val("");
-
-    //   });
-    function findFriend(person){
-        $.get("/api/friends",friends,function(data){
-
-        var diff=0;
-alert("Hello");
-for(i=0;i<data.length-1;i++){
-    for(j=0;j<data.score.length;j++){
-    var scoreDiff=   person.score[j]-data[i].score[j];
-if (scoreDiff < 0){
-scoreDiff=-(scoreDiff);
+// for(i=0;i<scoreArr.length;i++){
+// if()
+// }
+if(name == "" || photo== "" || scoreArr.includes("Select an option"))
+{
+alert("Please fill in al the fields to find a friend");
 }
-    diff+=scoreDiff;
-    console.log(diff);
-    }
-}
-        });
 
 
-
-
+else{
     $.post("/api/friends",person,function(data){
-        alert(data);
-        findFriend(person);
+alert(data);
     });
-
-    // $.ajax({
-    //     method: "POST",
-    //     url: "/api/friends",
-    //     data: person
-    //     })
-    //     .done(function( msg ) {
-    //         alert( "Data Saved: " + msg );
-    // });
-
-      }
-    });
+}
+});
 </script>
 
 
-</html>
