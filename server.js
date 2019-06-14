@@ -9,7 +9,7 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 require("./routes/apiRoutes.js")(app);
 require("./routes/htmlRoutes.js")(app);
 
