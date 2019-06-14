@@ -26,7 +26,8 @@ res.json(friends);
 app.post("/api/friends", function(req, res) {
   friends.push(req.body);
   var bestMatch=findFriend(req.body);
-  res.send(JSON.stringify(bestMatch));
+  res.json((bestMatch));
+
 });
   
 
